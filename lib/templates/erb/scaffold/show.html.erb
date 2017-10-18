@@ -1,25 +1,29 @@
-<p id="notice"><%%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
 
-<div class="panel-heading"><%= singular_table_name %></div>
+<div class="panel-heading">quote</div>
 
 <div class="panel-body">
 
-<% attributes.reject(&:password_digest?).each do |attribute| -%>
 
 <p>
-  <strong><%= attribute.human_name %>:</strong>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+  <strong>Name:</strong>
+  <%= @quote.name %>
 </p>
 
-<% end -%>
+
+<p>
+  <strong>Content:</strong>
+  <%= @quote.content %>
+</p>
+
 
 </div>
 
 <div class="panel-footer">
 
-<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) ,class:"btn btn-xs btn-danger" %> |
-<%%= link_to 'Back', <%= index_helper %>_path , class:"btn btn-xs btn-danger" %>
+<%= link_to 'Edit', edit_quote_path(@quote) ,class:"w3-button w3-blue" %> |
+<%= link_to 'Back', quotes_path , class:"w3-button w3-orange" %>
 
 </div></div>
